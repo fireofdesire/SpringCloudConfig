@@ -1,16 +1,19 @@
-spring: 
+spring:
   profiles:
-    active: dev
+    active: dev # 当需要哪个环境配置的时候，只需要在这里修改值。
 
---
-
-spring: 
-  profiles: dev
-  application:
-    name: dev
---
+---
+# 这个代表第二个文档块
+server:
+  port: 8086
 
 spring:
-  profiles: test
-  application:
-    name: test
+  profiles: dev # 指定dev，代表开发环境
+  
+---
+# 这个代表第三个文档块
+server:
+  port: 8087
+
+spring:
+  profiles: pro # 指定pro，代表生产环境

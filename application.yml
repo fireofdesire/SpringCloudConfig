@@ -23,6 +23,7 @@ server:
 spring:
   application:
     name: consumer
+  profiles: consumer # consumer代表consumer服务的配置
 eureka: 
   client: 
     register-with-eureka: true #是否注册到注册中心，默认true
@@ -34,5 +35,3 @@ info:
 feign:
   hystrix:
     enabled: true
-spring:
-  profiles: consumer # consumer代表consumer服务的配置

@@ -1,6 +1,4 @@
-spring:
-  profiles:
-    active: dev # 当需要哪个环境配置的时候，只需要在这里修改值。
+# nothing
 
 ---
 # 这个代表第二个文档块
@@ -17,3 +15,24 @@ server:
 
 spring:
   profiles: pro # 指定pro，代表生产环境
+
+---
+# consumer的配置
+server:
+  port: 9001
+spring:
+  application:
+    name: consumer
+eureka: 
+  client: 
+    register-with-eureka: true #是否注册到注册中心，默认true
+    fetch-registry: true #是否从注册中心获取服务，默认true
+    service-url: 
+      defaultZone: http://localhost:8200/eureka,http://localhost:8201/eureka,http://localhost:8202/eureka
+info: 
+  servicename: consumer9001
+feign:
+  hystrix:
+    enabled: true
+spring:
+  profiles: consumer # consumer代表consumer服务的配置
